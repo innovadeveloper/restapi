@@ -5,13 +5,13 @@
 
 El siguiente es un repositorio API-REST desarrollado con PHP y pensado para realizar request por medio de los "manejadores" que estarán esperando recibir las url-bases, request-params, headers(opcional) para poder extraer el contenido y evitarnos a nosotros hacer el trabajo desde un ordenador que pueda caer muy rápido en el error "403-Forbidden".
 
-[![N|Image-403-Forbidden](https://lh4.googleusercontent.com/KNWiUJSNWpf6cm6aLY4m5dtDDZ0YWoRmA4SzfKYd0sFrrpUb5CGaegicRstPSuAAkFIdFj_Jr_NLCNRaXYWS=w2088-h2442-rw)](https://www.hostinger.es/tutoriales/error-403-prohibido-arreglarlo/)
+[![N|Image-403-Forbidden](https://scrapingdevelop.000webhostapp.com/assets/images/error-403-forbidden.png)](https://www.hostinger.es/tutoriales/error-403-prohibido-arreglarlo/)
 
 # Explicación de diagrama de flujo Cliente-Manejador!
 
 A continuación se muestra el diagrama nombrado cliente-manejador para su mejor comprensión.
 
-[![N|Image-403-Forbidden](https://lh5.googleusercontent.com/OcBmDznN1fGummXoRk_iUzPjE3okD3ina9tIFCnm5l2Xf9ewQl3QyxDjG9BhrqQjp0lIJk1htnFcyFeVJNON=w2088-h2442-rw)](https://www.hostinger.es/tutoriales/error-403-prohibido-arreglarlo/)
+[![N|Diagrama Cliente-Manejador](https://scrapingdevelop.000webhostapp.com/assets/images/diagrama-cliente-manejador.png)](https://www.hostinger.es/tutoriales/error-403-prohibido-arreglarlo/)
 
 # Resumen
 Los siguientes son los endpoints más básicos para ser consumidos una vez sean alojados dentro de un servidor web como APACHE-WAMP.
