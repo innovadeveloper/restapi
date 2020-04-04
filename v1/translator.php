@@ -100,7 +100,6 @@ class Translator
                     continue;
                 }
                 curl_close($ch);
-
                 // respuesta correcta..
                 $isJSON = $httpRequests -> isJSON($result);
                 // Valida si se ha producido errores y muestra el mensaje de error

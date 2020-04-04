@@ -6,6 +6,10 @@
  * @Date:       $Date:$ Nov-2015
  * @Version:    $Rev:$ 1.0
  * @Developer:  Federico Guzman (federicoguzman@gmail.com)
+ * 
+
+
+
  **/
 
 /* Los headers permiten acceso desde otro dominio (CORS) a nuestro REST API o desde un cliente remoto via HTTP
@@ -18,6 +22,7 @@ header('Access-Control-Allow-Credentials: true');
 header('Access-Control-Allow-Methods: PUT, GET, POST, DELETE, OPTIONS');
 header("Access-Control-Allow-Headers: X-Requested-With");
 header('Content-Type: text/html; charset=utf-8');
+header('Content-Type: application/json');
 header('P3P: CP="IDC DSP COR CURa ADMa OUR IND PHY ONL COM STA"'); 
 
 include_once '../include/Config.php';
@@ -140,7 +145,8 @@ function authenticate(\Slim\Route $route) {
     $headers = apache_request_headers();
     $response = array();
     $app = \Slim\Slim::getInstance();
- 
+    
+    
     // Verifying Authorization Header
     if (isset($headers['Authorization'])) {
         //$db = new DbHandler(); //utilizar para manejar autenticacion contra base de datos

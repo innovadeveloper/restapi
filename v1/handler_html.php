@@ -62,8 +62,8 @@ class HandlerHtml
                 $hrefRequest = $domain; 
                 // http://localhost:8888/restapi/v1/handler_html
                 $ch = curl_init();
-                // curl_setopt($ch, CURLOPT_URL,            $hrefRequest);
-                curl_setopt($ch, CURLOPT_URL,            "http://localhost:8888/restapi/v1/handler_html");
+                curl_setopt($ch, CURLOPT_URL,            $hrefRequest);
+                // curl_setopt($ch, CURLOPT_URL,            "http://localhost:8888/restapi/v1/handler_html");
                 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true );
                 curl_setopt($ch, CURLOPT_POST,           true );
                 curl_setopt($ch, CURLOPT_POSTFIELDS, $fields);
