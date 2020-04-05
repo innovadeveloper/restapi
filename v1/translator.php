@@ -13,6 +13,8 @@ class Translator
             $languageOrigen = $_REQUEST["languageOrigen"];
             $languageDestination = $_REQUEST["languageDestination"];
             $text = $_REQUEST["text"];
+            
+            $text = rawurlencode($text);
 
             $ch = curl_init();
             curl_setopt($ch, CURLOPT_URL,            "https://www.online-translator.com/services/soap.asmx/GetSelectionInfo" );
