@@ -31,6 +31,7 @@ include 'track.php';
 include 'translator.php';
 include 'handler_api.php';
 include 'handler_html.php';
+include 'handler_files.php';
 // require 'handler_api.php'; 
 
 /* Puedes utilizar este file para conectar con base de datos incluido en este demo; 
@@ -50,6 +51,9 @@ $translator -> initRoute($app);
 
 $handlerApi = new HandlerApi();
 $handlerApi -> initRoute($app);
+
+$handlerFiles = new HandlerFiles();
+$handlerFiles -> initRoute($app);
 
 $handlerHtml = new HandlerHtml();
 $handlerHtml -> initRoute($app);
@@ -79,7 +83,7 @@ function verifyRequiredParams($required_fields) {
             $error_fields .= $field . ', ';
         }
     }
- 
+
     if ($error) {
         // Required field(s) are missing or empty
         // echo error json and stop the app

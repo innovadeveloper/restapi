@@ -2,13 +2,16 @@
 
     class FileUtils 
     {
+
+        public function __construct () {}
+
         /**
          * create file from byte array.
          * @param [String] $nameFile
          * @param [Array<Byte>] $byteArray
          * @return void
          */
-        function createFileFromByteArray($nameFile, $byteArray){
+        public function createFileFromByteArray($nameFile, $byteArray){
             return file_put_contents($nameFile, $byteArray);
         }
         /**
@@ -16,7 +19,7 @@
          * @param [String] $targetDir
          * @return void
          */
-        function isFileExist($targetDir){
+        public function isFileExist($targetDir){
             return (file_exists($targetDir));
         }
 
@@ -25,9 +28,10 @@
          * @param [String] $targetDir
          * @return void
          */
-        function createFolder($targetDir){
+        public function createFolder($targetDir){
             if(!$this->isFileExist($targetDir))
                 mkdir($targetDir, 0777, true);
+
         }
     }
 ?>

@@ -35,8 +35,17 @@ class HandlerApi
             curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'GET');
             curl_setopt($ch, CURLOPT_ENCODING, 'gzip, deflate');
             curl_setopt($ch, CURLOPT_HTTPHEADER, $headersArray);
+            
+            // identificando el problema
+            $result = 0;
+            // $result = curl_exec($ch);
 
-            $result = curl_exec($ch);
+            try {
+                $result = curl_exec($ch);
+            } catch (Exception $e) {
+                echo 'Excepción capturada: ',  $e->getMessage(), "\n";
+            }
+
             $isJSON = $httpRequests -> isJSON($result);
             $http_status = curl_getinfo($ch, CURLINFO_HTTP_CODE);
 
