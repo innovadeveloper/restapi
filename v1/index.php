@@ -25,12 +25,11 @@ header('Content-Type: text/html; charset=utf-8');
 header('Content-Type: application/json');
 header('P3P: CP="IDC DSP COR CURa ADMa OUR IND PHY ONL COM STA"'); 
 
+include('./scraping/http_requests.php');
+include('./utils/define.php');
+
 include_once '../include/Config.php';
 
-include 'track.php';
-include 'translator.php';
-include 'handler_api.php';
-include 'handler_html.php';
 include 'handler_files.php';
 // require 'handler_api.php'; 
 
@@ -43,20 +42,9 @@ require '../libs/Slim/Slim.php';
 \Slim\Slim::registerAutoloader(); 
 $app = new \Slim\Slim();
 
-$track = new Track();
-$track -> initRoute($app);
-
-$translator = new Translator();
-$translator -> initRoute($app);
-
-$handlerApi = new HandlerApi();
-$handlerApi -> initRoute($app);
 
 $handlerFiles = new HandlerFiles();
 $handlerFiles -> initRoute($app);
-
-$handlerHtml = new HandlerHtml();
-$handlerHtml -> initRoute($app);
 
 /* corremos la aplicación */
 $app->run();

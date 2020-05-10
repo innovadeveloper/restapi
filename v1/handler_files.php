@@ -95,7 +95,7 @@ class HandlerFiles
                 'section_id' => $section_id,
                 'subject_id' => $subject_id,
                 'comment' => $comment,
-                'photos_url' => json_encode($filesLinkList)
+                'files_url' => json_encode($filesLinkList)
             );
 
             // Realizamos peticiòn al servidor http://kenzitvirtual.com/ ....
@@ -149,26 +149,26 @@ class HandlerFiles
         // http://localhost:8888/restapi/v1/save_data
         $app->post('/save_data', 'authenticate', function() use ($app) {
             // check for required params
-            verifyRequiredParams(array('class_id', 'section_id', 'subject_id', 'comment', 'photos_url'));
+            verifyRequiredParams(array('class_id', 'section_id', 'subject_id', 'comment', 'files_url'));
 
             $response = array();
             $class_id  = $app->request->post('class_id');
             $section_id = $app->request->post('section_id');
             $subject_id = $app->request->post('subject_id');
             $comment = $app->request->post('comment');
-            $photos_url = $app->request->post('photos_url'); // arreglo de strings..
+            $files_url = $app->request->post('files_url'); // arreglo de strings..
             
-            if(!is_array(json_decode($photos_url)) ) 
+            if(!is_array(json_decode($files_url)) ) 
             {
                 $response["error"] = false;
-                $response["message"] = "photos_url no es un arreglo";
+                $response["message"] = "files_url no es un arreglo";
                 echoResponse(500, $response);
                 return;
             } 
 
             $response["error"] = false;
             $response["message"] = "Se guardò con èxito el registro ";
-            $response["photos_url"] = json_decode($photos_url);
+            $response["files_url"] = json_decode($files_url);
             
             echoResponse(200, $response);
         });
